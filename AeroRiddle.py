@@ -1,4 +1,3 @@
-from itertools import permutations
 
 def calculate_total_time(order, airport_names, flight_times, chosen_company):
     total_time = 0
