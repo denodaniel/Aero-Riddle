@@ -1,0 +1,14 @@
+his code is written in Python and is designed to help users find the optimal flight route based on their preferences for either minimizing travel time or minimizing cost. Here's a breakdown of what the code does:
+
+The calculate_total_time function takes a list of airport indices (order), a list of airport names (airport_names), a dictionary of flight times (flight_times), and a chosen flight company (chosen_company). It calculates the total travel time by summing up the flight times between each consecutive pair of airports in the order list.
+The calculate_total_cost function works similarly to calculate_total_time, but it calculates the total cost of the flight route. It also adds the cost of the return flight from the last airport back to the starting airport.
+The get_predefined_airports function returns a list of predefined airport names.
+The get_user_selection function displays the list of airport names and prompts the user to enter the indices of the airports they want to visit, separated by spaces. It returns a list of the selected airport names.
+The get_flight_times and get_flight_costs functions return dictionaries containing flight times and costs, respectively, for three predefined flight companies.
+The find_optimal_flight_route function takes the airport names, flight data (times or costs), the user's chosen airport order, and the optimization choice ('time' or 'cost'). It calculates the total time or cost for each flight company and returns the optimal route, the minimum value (time or cost), and the chosen company.
+The main program loop starts by getting the predefined airport names and prompting the user to select the airports they want to visit.
+If the user chooses to exit, the program ends.
+Otherwise, the user is prompted to choose whether they want to optimize for time or cost.
+Based on the user's choice, the program calls the find_optimal_flight_route function and displays the optimal route, the total time or cost, and the chosen company.
+If the user chose to optimize for cost, the program prompts for the number of adult and child passengers, calculates the total cost, and offers various discounts based on different criteria (student, doctor, senior citizen, military personnel, or flat discounts based on the total cost).
+The program provides options to check the cost for business class and applies additional discounts based on the user's selection.
