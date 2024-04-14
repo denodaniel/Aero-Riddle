@@ -1,14 +1,29 @@
-his code is written in Python and is designed to help users find the optimal flight route based on their preferences for either minimizing travel time or minimizing cost. Here's a breakdown of what the code does:
+1. Finding Optimal Flight Routes:
+calculate_total_time and calculate_total_cost:
 
-The calculate_total_time function takes a list of airport indices (order), a list of airport names (airport_names), a dictionary of flight times (flight_times), and a chosen flight company (chosen_company). It calculates the total travel time by summing up the flight times between each consecutive pair of airports in the order list.
-The calculate_total_cost function works similarly to calculate_total_time, but it calculates the total cost of the flight route. It also adds the cost of the return flight from the last airport back to the starting airport.
-The get_predefined_airports function returns a list of predefined airport names.
-The get_user_selection function displays the list of airport names and prompts the user to enter the indices of the airports they want to visit, separated by spaces. It returns a list of the selected airport names.
-The get_flight_times and get_flight_costs functions return dictionaries containing flight times and costs, respectively, for three predefined flight companies.
-The find_optimal_flight_route function takes the airport names, flight data (times or costs), the user's chosen airport order, and the optimization choice ('time' or 'cost'). It calculates the total time or cost for each flight company and returns the optimal route, the minimum value (time or cost), and the chosen company.
-The main program loop starts by getting the predefined airport names and prompting the user to select the airports they want to visit.
-If the user chooses to exit, the program ends.
-Otherwise, the user is prompted to choose whether they want to optimize for time or cost.
-Based on the user's choice, the program calls the find_optimal_flight_route function and displays the optimal route, the total time or cost, and the chosen company.
-If the user chose to optimize for cost, the program prompts for the number of adult and child passengers, calculates the total cost, and offers various discounts based on different criteria (student, doctor, senior citizen, military personnel, or flat discounts based on the total cost).
-The program provides options to check the cost for business class and applies additional discounts based on the user's selection.
+These functions calculate the total travel time or cost based on the chosen route (order of visiting airports) and flight data (time/cost) for a specific airline.
+
+find_optimal_flight_route:
+
+This function takes various inputs including airport names, flight data, user-specified route, and the optimization criteria (time/cost). It iterates through flight data for different airlines and finds the route with the minimum total time or cost based on the user's preference.
+It returns the optimal route, corresponding total value (time/cost), and the chosen airline.
+
+2. User Interaction:
+get_predefined_airports:
+
+This function defines a list of airports the program considers.
+get_user_selection: This function interacts with the user to get their desired travel route by prompting them to choose airport names from the predefined list.
+The main program loop allows users to specify their desired airports and then choose between optimizing for travel time or cost
+
+3. Additional Functionalities (not fully optimized):
+
+The code calculates the total cost considering the number of adult and child passengers.
+It offers discounts based on user-selected categories (student, doctor, etc.) but the discount logic is not optimized (doesn't consider the number of passengers).
+It offers the option to explore business class fares for the chosen airline based on a simple multiplier on the economy class cost.
+Overall, this code provides a good foundation for a flight recommendation system. Here are some potential improvements:
+
+Error handling: The code could be improved by adding more error handling for invalid user inputs.
+Discount logic: The discount calculations can be optimized to consider the number of passengers and potentially other factors.
+Search by date: The program could be enhanced to allow searching for flights based on specific dates.
+Layovers: The system could be extended to explore routes with layovers (considering factors like total travel time and cost).
+API integration: Integrating with real-time flight data APIs could provide more up-to-date information.
